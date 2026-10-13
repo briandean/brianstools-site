@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Changelog — Brian’s Tools</title>
+<meta name="description" content="What’s new in each release of Brian’s Tools.">
+<link rel="canonical" href="https://brianstools.net/changelog.html">
+<meta name="theme-color" content="#0f172a">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Brian’s Tools">
+<meta property="og:title" content="Changelog — Brian’s Tools">
+<meta property="og:description" content="What’s new in each release of Brian’s Tools.">
+<meta property="og:url" content="https://brianstools.net/changelog.html">
+<meta property="og:image" content="https://brianstools.net/assets/brand/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" href="/assets/fonts/Inter-ExtraBold.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/css/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap bar">
+    <a class="brand" href="/" aria-label="Brian’s Tools home"><img src="/assets/brand/logo-reversed.svg" alt="Brian’s Tools" width="190" height="42"></a>
+    <button class="menu-btn" aria-expanded="false" aria-controls="nav">Menu</button>
+    <nav id="nav" class="nav"><a href="/">Home</a><a href="/help/">Help</a><a href="/changelog.html" aria-current="page">Changelog</a><a href="/details.html">Details</a><a href="/#download">Download</a><a href="/contact.html">Contact</a><a class="gh" href="https://github.com/briandean/brianstools" rel="noopener"><svg viewBox="0 0 16 16" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg><span>GitHub</span></a></nav>
+  </div>
+</header>
+<main id="main">
+
+<section class="page-head"><div class="wrap">
+  <p class="eyebrow">Changelog</p>
+  <h1>What’s new</h1>
+  <p class="lede-plain">Every release of Brian’s Tools. Versions before 1.0 are numbered by release date: <strong>0.YYYY.MMDD</strong>, plus <strong>.N</strong> for a second release on the same day.</p>
+  <p class="ver-chip">Latest: Version 0.2026.1012.2 · released October 12, 2026</p>
+  <p class="cta"><a class="btn btn-primary" href="/#download">Download</a> <a class="btn btn-ghost" href="/help/">Help</a></p>
+</div></section>
+<div class="wrap doc-layout">
+  <aside class="doc-toc" aria-label="Releases"><p class="toc-title">Releases</p><ul class="toc"><li><a href="#v0-2026-1012-2">0.2026.1012.2 — October 12, 2026</a></li><li><a href="#v0-2026-1011">0.2026.1011 — October 11, 2026</a></li></ul></aside>
+  <article class="doc changelog"><h2 id="v0-2026-1012-2">0.2026.1012.2 — October 12, 2026</h2>
+<h3>New</h3>
+<ul>
+<li><strong>PeeringDB tool</strong> (Network group). Look up a network by ASN, a PeeringDB link (<code>/net/</code>, <code>/ix/</code>, <code>/fac/</code>, <code>/org/</code>), an exchange peering IP, or part of a name.
+<ul>
+<li>Networks are laid out like peeringdb.com: organization, ASN, IRR as-set, traffic and scope, peering policy, contacts, public peering exchange points and interconnection facilities.</li>
+<li>Exchanges, facilities and organizations open the same way, with their peers, facilities, prefixes and networks.</li>
+<li>An exchange IP lookup finds the network on that port and highlights the row.</li>
+<li><strong>View on PeeringDB ↗</strong> opens the record on the website. PeeringDB names in the results open inside the tool, with <strong>◀ Back</strong> to return.</li>
+<li>Right-click a row to open it on the website, run Whois or IRR / RPKI on the ASN, or ping or copy the IPs.</li>
+<li>Optional PeeringDB API key for a higher rate limit and logged-in-only contacts. The key is only sent over verified HTTPS.</li>
+</ul>
+</li>
+<li><strong>Team Cymru lookups in Whois, now the default source.</strong> IPs, prefixes and ASNs go to Team Cymru's IP to ASN mapping service in one bulk query. Results show the origin AS, BGP prefix, AS name, country, registry and allocation date.
+<ul>
+<li>Choose <strong>Auto</strong> (whois on TCP 43, falling back to DNS if port 43 is blocked), <strong>whois</strong> or <strong>DNS</strong>.</li>
+<li>Addresses that aren't announced in BGP show in grey, and prefixes with several origin ASes show in orange.</li>
+<li><strong>Open in bgp.he.net</strong> for the selected item.</li>
+</ul>
+</li>
+<li><strong>Resizable text boxes and tables.</strong> Every box and table in the tools has a grip underneath: drag it to set the height, or double-click it to go back to automatic. Heights are remembered between launches.</li>
+</ul>
+<h3>Changed</h3>
+<ul>
+<li>Whois has a <strong>Source</strong> choice: <strong>Team Cymru</strong> (default) or <strong>ARIN and the other registries (RDAP)</strong>. ARIN mode is unchanged and still gives net names, organizations and abuse contacts. ARIN handles (<code>NET-…</code>, <code>GOGL</code>) always go to ARIN.</li>
+<li>In the help and README, the &quot;Team Cymru&quot; name links to their website.</li>
+<li>The help and README cover the new tools.</li>
+</ul>
+<h3>Fixed</h3>
+<ul>
+<li>Whois over DNS: a resolver that blocks or rewrites lookups no longer makes every address look &quot;not announced&quot;. The app first checks a record that always exists, and reports when DNS looks filtered.</li>
+<li>Help file: a numbered list right after a bulleted list is no longer merged into it.</li>
+<li>PeeringDB tool: the text panes are sized to the longer column, so the right column is no longer cut off.</li>
+</ul>
+<h3>Under the hood</h3>
+<ul>
+<li>New modules: <code>cymru.py</code> (Team Cymru client) and <code>peeringdb.py</code> (PeeringDB client).</li>
+<li>The shared HTTPS helper accepts extra headers and never falls back to an unverified connection when a credential is attached.</li>
+<li>105 unit tests.</li>
+</ul>
+<h2 id="v0-2026-1011">0.2026.1011 — October 11, 2026</h2>
+<p>First release.</p>
+<ul>
+<li><strong>Tools:</strong>
+<ul>
+<li><strong>IP:</strong> IP Calc, IP Summarize, Bits &amp; Bytes, Bandwidth Cost.</li>
+<li><strong>Time:</strong> Time Zones, Time Calc.</li>
+<li><strong>MAC:</strong> MAC Format, MAC Lookup.</li>
+<li><strong>Network:</strong> DNS Digr, Ping, Ping Sweep, Traceroute, Whois, Route Table, IRR / RPKI.</li>
+<li><strong>Text &amp; logs:</strong> Compare, Log Times.</li>
+</ul>
+</li>
+<li><strong>Built-in help:</strong> F1, ☰ Tools → Brian's Tools Help, or the Help link on Home. It's compiled from <code>help.md</code> on every build.</li>
+<li><strong>About box</strong> with version info, and links to brianstools.net.</li>
+<li><strong>Date-based version numbers:</strong> <code>0.YYYY.MMDD</code>, plus <code>.N</code> for a second release on the same day.</li>
+</ul>
+</article>
+</div>
+
+</main>
+<footer class="site-footer">
+  <div class="wrap foot">
+    <div class="foot-brand"><img src="/assets/brand/mark-reversed.svg" alt="" width="54" height="36"><div><strong>Brian’s Tools</strong><span>Network Toolbox · 0.2026.1012.2</span></div></div>
+    <nav class="foot-nav"><a href="/">Home</a><a href="/help/">Help</a><a href="/changelog.html">Changelog</a><a href="/details.html">Details</a><a href="/#download">Download</a><a href="/contact.html">Contact</a><a href="https://github.com/briandean/brianstools" rel="noopener">GitHub</a></nav>
+    <p class="fine">© 2026 Brian Dean · brianstools.net</p>
+  </div>
+</footer>
+<script src="/assets/js/site.js" defer></script>
+</body>
+</html>
